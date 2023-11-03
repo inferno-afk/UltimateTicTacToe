@@ -1,4 +1,4 @@
-package com.example.utictac
+package com.udaharan.utictac
 
 import org.junit.Test
 

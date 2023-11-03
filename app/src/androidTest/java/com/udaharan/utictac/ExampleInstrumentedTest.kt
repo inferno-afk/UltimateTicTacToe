@@ -1,4 +1,4 @@
-package com.example.utictac
+package com.udaharan.utictac
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

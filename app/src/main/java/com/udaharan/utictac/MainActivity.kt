@@ -1,6 +1,5 @@
 package com.udaharan.utictac
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -17,20 +16,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setButtonListeners()
+        startGame()
 
         val restartGameActivity = findViewById<Button>(R.id.btn_restart)
         restartGameActivity.setOnClickListener{
-            val intent = Intent(this,MainActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-            startActivity(intent)
-
-            finish()
+            startGame()
         }
     }
 
-    private fun setButtonListeners() {
+    private fun startGame() {
 
+        clickCount = 0
+        ttMatrix = MutableList(3) { MutableList(3) { -1 } }
         val btnList = mutableListOf<Button>()
         btnList.add(findViewById(R.id.btn_1))
         btnList.add(findViewById(R.id.btn_2))
@@ -42,10 +39,14 @@ class MainActivity : AppCompatActivity() {
         btnList.add(findViewById(R.id.btn_8))
         btnList.add(findViewById(R.id.btn_9))
 
+        btnList.forEach {
+            it.text=""
+        }
+
         val clickListener = View.OnClickListener {
             Log.d("BtnClick", "Btn: " + it.id)
             if (btnList.contains(it)) {
-                putStringAndDisableBtn(btnList[btnList.indexOf(it)], btnList.indexOf(it))
+                putStringToButtons(btnList[btnList.indexOf(it)], btnList.indexOf(it))
                 if (checkForWin()) {
                     Log.d("BtnClick", "Check: ${checkForWin()}")
                     disableAllButtons(btnList)
@@ -58,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun putStringAndDisableBtn(button: Button, index: Int) {
+    private fun putStringToButtons(button: Button, index: Int) {
         clickCount++
         var stringToPut = stringX
         if ((clickCount and 1) == 1) {

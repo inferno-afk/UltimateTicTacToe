@@ -11,7 +11,7 @@
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/cat4Final"
+        android:src="@drawable/cat4_final"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="20dp"
         android:layout_gravity="center"
@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:fontFamily="@font/Nunito_Black"
+                android:fontFamily="@font/nunito_black"
                 android:text="Login Here"
                 android:textAlignment="center"
                 android:textColor="@color/teal4"
@@ -47,7 +47,7 @@
                 android:padding="5dp"
                 android:layout_margin="10dp"
                 android:textColor="@color/teal3"
-                android:fontFamily="@font/Nunito_Medium"
+                android:fontFamily="@font/nunito_medium"
                 android:text="Welcome Back, Lets continue winning!!"/>
 
             <EditText
@@ -56,7 +56,7 @@
                 android:layout_margin="5dp"
                 android:padding="5dp"
                 android:textColor="@color/teal2"
-                android:fontFamily="@font/Nunito_Regular"
+                android:fontFamily="@font/nunito_regular"
                 android:hint="Email"/>
 
             <EditText
@@ -65,7 +65,7 @@
                 android:layout_margin="5dp"
                 android:padding="5dp"
                 android:textColor="@color/teal2"
-                android:fontFamily="@font/Nunito_Regular"
+                android:fontFamily="@font/nunito_regular"
                 android:hint="Password"/>
 
 
@@ -84,7 +84,7 @@
                 android:backgroundTint="@color/white"
                 android:textColor="@color/black"
                 android:textAlignment="center"
-                android:fontFamily="@font/Nunito_Regular"
+                android:fontFamily="@font/nunito_regular"
                 android:text="Create new account"/>
 
 
